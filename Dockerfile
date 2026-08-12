@@ -18,7 +18,6 @@ RUN userdel -r ubuntu 2>/dev/null || true
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        # Basic system utilities
         ca-certificates \
         curl \
         wget \
@@ -48,22 +47,16 @@ RUN apt-get update && \
         bzip2 \
         xz-utils \
         zstd \
-        \
-        # Build / compilation
         build-essential \
         gcc \
         g++ \
         make \
         pkg-config \
-        \
-        # Python
         python3 \
         python3.11 \
         python3.11-dev \
         python3.11-venv \
         python3-pip \
-        \
-        # Python/native libraries
         libffi-dev \
         libssl-dev \
         libbz2-dev \
@@ -71,12 +64,8 @@ RUN apt-get update && \
         libsqlite3-dev \
         liblzma-dev \
         zlib1g-dev \
-        \
-        # Hermes dependencies
         ripgrep \
         ffmpeg \
-        \
-        # Networking
         iproute2 \
         iputils-ping \
         dnsutils \
@@ -85,17 +74,11 @@ RUN apt-get update && \
         telnet \
         netcat-openbsd \
         openssl \
-        \
-        # SSH
         openssh-client \
         openssh-server \
         sudo \
-    && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/* \
-           /tmp/* \
-           /var/tmp/*
-
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # ============================================================
 # Python 3.11
