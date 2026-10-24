@@ -18,10 +18,10 @@ RUN apt-get update && \
     && add-apt-repository -y ppa:deadsnakes/ppa \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        python3.11 \
-        python3.11-dev \
-        python3.11-venv \
-        python3.11-distutils \
+        python3.12 \
+        python3.12-dev \
+        python3.12-venv \
+        python3.12-distutils \
         python3-pip \
         \
         git \
@@ -81,7 +81,7 @@ RUN ln -sf /usr/bin/python3.11 /usr/local/bin/python3 && \
     ln -sf /usr/bin/python3.11 /usr/local/bin/python && \
     python --version && \
     python3 --version && \
-    python3.11 --version
+    python3.12 --version
 
 # SSH
 RUN mkdir -p /run/sshd && \
@@ -97,8 +97,8 @@ RUN mkdir -p /run/sshd && \
 RUN set -eux; \
     python --version; \
     python3 --version; \
-    python3.11 --version; \
-    python3.11 -m venv /tmp/test-venv; \
+    python3.12 --version; \
+    python3.12 -m venv /tmp/test-venv; \
     /tmp/test-venv/bin/python --version; \
     rm -rf /tmp/test-venv; \
     git --version; \
