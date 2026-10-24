@@ -76,8 +76,8 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Python 3.11 defaults
-RUN ln -sf /usr/bin/python3.11 /usr/local/bin/python3 && \
-    ln -sf /usr/bin/python3.11 /usr/local/bin/python && \
+RUN ln -sf /usr/bin/python3.12 /usr/local/bin/python3 && \
+    ln -sf /usr/bin/python3.12 /usr/local/bin/python && \
     python --version && \
     python3 --version && \
     python3.12 --version
